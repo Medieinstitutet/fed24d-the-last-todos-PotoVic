@@ -5,47 +5,46 @@ import { AddTodo } from "./addTodos";
 import { Todos } from "./todos";
 
 export const TodoApp = () => {
-
-    const [todos, setTodos] = useState<Todo[]>(() => {
-        const saved = localStorage.getitem("todos");
-        if(saved) {
-            return JSON.parse(saved)
-        } else {
-            const initial = TodoList.map(todo => ({...todo, inEdit:false}))
-            localStorage.setItem("todos", JSON.stringify(initial))
-            return initial
-        }
-    })
-
-    useEffect(() => {
-        localStorage.setItem("todos",JSON.stringify(todos));
-    }, [todos]);
-
-    const addTodo = (t: Todo) => {
-        setTodos([...todos, t])
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    const saved = localStorage.getItem("todos");
+    if (saved) {
+      return JSON.parse(saved);
+    } else {
+      const initial = TodoList.map(todo => ({ ...todo, inEdit: false }));
+      localStorage.setItem("todos", JSON.stringify(initial));
+      return initial;
     }
+  });
 
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
-    const editTodo = (t: Todo) => {
+  const addTodo = (t: Todo) => {
+    setTodos([...todos, t]);
+  };
 
-    }
+  const editTodo = (id: number) => {
+    setTodos(todos.map((t) => (t.id === id ? { ...t, inEdit: !t.inEdit } : t)));
+  };
 
-    const updateTodo = (updated: Todo) => {
+  const updateTodo = (updated: Todo) => {
+    setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+  };
 
-    }
+  const removeTodo = (id: number) => {
+    setTodos(todos.filter((t) => t.id !== id));
+  };
 
-    const removeTodo = (Id: number) => {
-
-    }
-
-
-    return ( 
-
-        <>
-            <AddTodo addTodo={addTodo} />
-            <Todos todos={todos} editTodo={editTodo} updateTodo={updateTodo} removeTodo={removeTodo} />
-        
-        
-        </>
-    )
-}
+  return (
+    <>
+      <AddTodo addTodo={addTodo} />
+      <Todos
+        todos={todos}
+        editTodo={editTodo}
+        updateTodo={updateTodo}
+        removeTodo={removeTodo}
+      />
+    </>
+  );
+};
