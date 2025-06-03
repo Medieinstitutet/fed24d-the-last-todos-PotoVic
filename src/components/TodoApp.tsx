@@ -2,9 +2,11 @@ import { Todo } from "../models/Todo";
 import { useEffect, useState } from "react";
 import TodoList from "./TodoList";
 import { AddTodo } from "./addTodos";
+import { Todos } from "./todos";
+
 export const TodoApp = () => {
 
-    const [todos, setTodos] = useState<Todo>(() => {
+    const [todos, setTodos] = useState<Todo[]>(() => {
         const saved = localStorage.getitem("todos");
         if(saved) {
             return JSON.parse(saved)
@@ -19,7 +21,7 @@ export const TodoApp = () => {
         localStorage.setItem("todos",JSON.stringify(todos));
     }, [todos]);
 
-    const addTodo = (t: todo) => {
+    const addTodo = (t: Todo) => {
         setTodos([...todos, t])
     }
 
@@ -41,7 +43,7 @@ export const TodoApp = () => {
 
         <>
             <AddTodo addTodo={addTodo} />
-        
+            <Todos todos={todos} editTodo={editTodo} updateTodo={updateTodo} removeTodo={removeTodo} />
         
         
         </>
