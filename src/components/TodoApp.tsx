@@ -15,6 +15,18 @@ export const TodoApp = () => {
         }
     })
 
+    useEffect(() => {
+        localStorage.setItem("todos",JSON.stringify(todos));
+    }, [todos]);
+
+    
+
+
+    const addTodo = (t: todo) => {
+
+    }
+
+
     const editTodo = (t: Todo) => {
 
     }
