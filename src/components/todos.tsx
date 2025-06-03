@@ -11,7 +11,7 @@ type TodosProps = {
 
 export const Todos = ({todos, editTodo, updateTodo, removeTodo}:TodosProps) => {
     return(
-        <div>
+        <div className="todos">
             {todos.map((t)=> (
                 <TodosPresentation key={t.id} todo={t} editTodo={editTodo} updateTodo={updateTodo} removeTodo={removeTodo} />
             ))}

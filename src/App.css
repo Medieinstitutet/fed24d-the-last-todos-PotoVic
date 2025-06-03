@@ -1,0 +1,152 @@
+.todos{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  gap: 100px;
+  margin-top: 20px;
+}
+.todo-box{
+  height: 250px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.todo-box h2{
+  
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.todo-box p{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+.form-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgb(0, 218, 0) ;
+  padding-bottom: 10px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  height: 250px;
+  justify-content: center;
+}
+label{
+  font-size: 1.3rem;
+}
+input{
+  height: 25px;
+  background-color: black;
+  border: 1px solid  rgb(0, 218, 0);
+  border-radius: 4px;
+  color: rgb(0, 218, 0);
+  outline: none;
+  font-size: 1.1rem;
+  padding: 1px 5px;
+}
+input:focus{
+  border: 2px solid  rgb(0, 218, 0);
+}
+
+select{
+  height: 25px;
+  background-color: black;
+  border: 1px solid  rgb(0, 218, 0);
+  border-radius: 4px;
+  color: rgb(0, 218, 0);
+  outline: none;
+  font-size: 1.1rem;
+  padding: 1px 1px; 
+}
+form select:focus{
+  border: 2px solid  rgb(0, 218, 0);
+}
+.done-box{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+.form-box .done-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.done-box label{
+  width: auto;
+}
+.done-box input{
+  width: 20px;
+  background-color: black;
+}
+input[type="checkbox"] {
+  appearance: none;
+  width: 30px;
+  cursor: pointer;
+  position: relative;
+}
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: limegreen;
+  font-size: 16px;
+  width: 20px;
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  zoom: 1.2;
+}
+.form-btn{
+  background-color: black;
+  border: 1px solid  rgb(0, 218, 0);
+  color: rgb(0, 218, 0);
+  height: 40px;
+  width: 100px;
+  align-self: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.form-btn:hover{
+  border: 2px solid  rgb(0, 218, 0);
+}
+.button-box{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+
+}
+.button-box button{
+  background-color: black;
+  border: 1px solid  rgb(0, 218, 0);
+  color: rgb(0, 218, 0);
+  height: 40px;
+  width: 100%;
+  align-self: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.button-box button:hover{
+  border: 2px solid  rgb(0, 218, 0);
+}
+.priority-box{
+  display: flex;
+  gap: 20px;
+}
+.todo-label-name{
+  display: flex;
+  gap: 10px;
+  height: 30px;
+}
