@@ -1,7 +1,7 @@
 import { Todo } from "../models/Todo";
 import { useEffect, useState } from "react";
 import TodoList from "./TodoList";
-
+import { AddTodo } from "./addTodos";
 export const TodoApp = () => {
 
     const [todos, setTodos] = useState<Todo>(() => {
@@ -19,11 +19,8 @@ export const TodoApp = () => {
         localStorage.setItem("todos",JSON.stringify(todos));
     }, [todos]);
 
-    
-
-
     const addTodo = (t: todo) => {
-
+        setTodos([...todos, t])
     }
 
 
@@ -43,7 +40,7 @@ export const TodoApp = () => {
     return ( 
 
         <>
-        
+            <AddTodo addTodo={addTodo} />
         
         
         
