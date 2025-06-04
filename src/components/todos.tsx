@@ -1,5 +1,5 @@
 import type { Todo } from "../models/Todo";
-import { TodosPresentation } from "./todoPresentation";
+import { TodosPresentation } from "./TodoPresentation";
 
 
 type TodosProps = {
@@ -8,7 +8,7 @@ type TodosProps = {
     updateTodo:(t: Todo) => void;
     removeTodo: (id: number) => void;
 }
-
+// loops through todos array using map. and for each todo it renders Todospresentation comonent and passes down todo object + functions
 export const Todos = ({todos, editTodo, updateTodo, removeTodo}:TodosProps) => {
     return(
         <div className="todos">
@@ -16,5 +16,5 @@ export const Todos = ({todos, editTodo, updateTodo, removeTodo}:TodosProps) => {
                 <TodosPresentation key={t.id} todo={t} editTodo={editTodo} updateTodo={updateTodo} removeTodo={removeTodo} />
             ))}
         </div>
-    )
+    )   
 }

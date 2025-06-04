@@ -31,7 +31,7 @@ const TodoList: Todo[] = [
         },
         {
             id:5,
-            title: "clean your room",
+            title: "Clean your room",
             done: false,
             priority: "low",
             inEdit: false

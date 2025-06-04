@@ -1,13 +1,14 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { Todo } from "../models/Todo";
 
+
 type AddTodoProps = {
   addTodo: (t: Todo) => void;
 };
-
+// state that represents new todo being build.
 export const AddTodo = ({ addTodo }: AddTodoProps) => {
   const [todo, setTodo] = useState<Todo>(new Todo("", false, "mid"));
-
+  // handles the changes in input fields
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -19,7 +20,7 @@ export const AddTodo = ({ addTodo }: AddTodoProps) => {
         type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     });
   };
-
+  // prevents default form submission and calls addTodo prop with current todo + resets form
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     addTodo(todo);

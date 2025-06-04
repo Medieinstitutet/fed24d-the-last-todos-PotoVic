@@ -8,14 +8,16 @@ type TodoPresentationProps = {
   removeTodo: (id: number) => void;
 };
 
+
 export const TodosPresentation = ({
   todo,
   editTodo,
   updateTodo,
   removeTodo,
 }: TodoPresentationProps) => {
+  // local state of todo that is used in form edits
   const [editedTodo, setEditedTodo] = useState(todo);
-
+  // input handler, reads input fields and also updates the editedTodo state
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -31,7 +33,7 @@ export const TodosPresentation = ({
           : value,
     });
   };
-
+  // saves changes by calling parent's updateTodo function + sets inedit false to exit the edit mode whenever u save change
   const handleSave = () => {
     updateTodo({ ...editedTodo, inEdit: false });
   };
