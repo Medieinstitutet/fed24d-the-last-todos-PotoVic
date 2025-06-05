@@ -3,35 +3,35 @@ import { Todo } from "../models/Todo";
 const TodoList: Todo[] = [
         {
             id:1,
-            title: "Eat breakfast",
+            title: "Download Repo",
             done: false,
             priority: "low",
             inEdit: false
         },
         {
             id:2,
-            title: "Take a dog for a walk",
+            title: "Run Npm I",
             done: true,
             priority:"high",
             inEdit: false
         },
         {
             id:3,
-            title: "Practice Coding",
+            title: "Run Npm Run Dev",
             done: true,
             priority: "high",
             inEdit: false
         },
         {
             id:4,
-            title: "Make lunch",
+            title: "Code your own Website",
             done: false,
             priority: "mid",
             inEdit: false
         },
         {
             id:5,
-            title: "Clean your room",
+            title: "Make style for it",
             done: false,
             priority: "low",
             inEdit: false
