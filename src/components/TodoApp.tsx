@@ -39,11 +39,26 @@ export const TodoApp = () => {
     setTodos(todos.filter((t) => t.id !== id));
   };
 
+
+  const  [filter, setFilter] = useState<"all" | "done" | "not-done">("all");
+
+  const filteredTodos = todos.filter((todo)=> {
+    if(filter === "done") return todo.done
+    if(filter === "not-done") return !todo.done;
+    return true;
+  })
+
   return (
     <>
+
       <AddTodo addTodo={addTodo} />
+      <div className="flex flex-row justify-center items-center w-full gap-3 align-middle py-[10px] ">
+        <button className="bg-black border border-[#00da00] text-[#00da00] h-[40px] w-[150px] self-center rounded cursor-pointer text-[1.1rem] hover:border-2 hover:border-[#00da00]" onClick={() => setFilter("all")}>Show All</button>
+        <button className="bg-black border border-[#00da00] text-[#00da00] h-[40px] w-[150px] self-center rounded cursor-pointer text-[1.1rem] hover:border-2 hover:border-[#00da00]" onClick={() => setFilter("done")}>Show Done</button>
+        <button className="bg-black border border-[#00da00] text-[#00da00] h-[40px] w-[150px] self-center rounded cursor-pointer text-[1.1rem] hover:border-2 hover:border-[#00da00]" onClick={() => setFilter("not-done")}>Show Not Done</button>
+      </div>
       <Todos
-        todos={todos}
+        todos={filteredTodos}
         editTodo={editTodo}
         updateTodo={updateTodo}
         removeTodo={removeTodo}
