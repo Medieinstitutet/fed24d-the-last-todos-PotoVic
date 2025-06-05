@@ -40,10 +40,11 @@ export const TodosPresentation = ({
 
   if (todo.inEdit) {
     return (
-      <div className="todo-box">
-        <div className="todo-label-name">
-          <label>Todo:</label>
+      <div className="h-[250px] w-[300px] flex flex-col items-center content-between gap-[30px]">
+        <div className="flex gap-[10px] h-[30px]">
+          <label className="text-[1.3rem]">Todo:</label>
           <input
+            className="h-[25px] bg-black border border-[#00da00] rounded text-[#00da00] outline-none text-[1.1rem] px-[5px] py-[1px] focus:border-2 focus:border-[#00da00] "
             id="title"
             type="text"
             value={editedTodo.title}
@@ -51,9 +52,10 @@ export const TodosPresentation = ({
             required
           />
         </div>
-        <div className="priority-box">
-          <label>Priority:</label>
+        <div className="flex gap-[20px]">
+          <label className="text-[1.3rem]">Priority:</label>
           <select
+            className="h-[25px] bg-black border border-[#00da00] rounded text-[#00da00] outline-none text-[1.1rem] px-[1px] py-[1px] focus:border-2 focus:border-[#00da00]"
             id="priority"
             value={editedTodo.priority}
             onChange={handleChange}
@@ -64,32 +66,32 @@ export const TodosPresentation = ({
             <option value="high">high</option>
           </select>
         </div>
-        <div className="done-box">
-          <label>Status: {editedTodo.done ? "Done " : "Not Done"}</label>
+        <div className="w-full flex justify-around">
+          <label className="text-[1.3rem]">Status: {editedTodo.done ? "Done " : "Not Done"}</label>
           <input
+            className="appearance-none w-[30px] cursor-pointer relative border  border-[#00da00] rounded"
             id="done"
             type="checkbox"
             checked={editedTodo.done}
             onChange={handleChange}
-            required
           />
         </div>
-        <div className="button-box">
-          <button onClick={handleSave}>submit edit</button>
-          <button onClick={() => removeTodo(editedTodo.id)}>delete todo</button>
+        <div className="w-full h-[40px] flex flex-row">
+          <button className="bg-black border border-[#00da00] text-[#00da00] h-[40px] w-full self-center rounded cursor-pointer text-[1.1rem] hover:border-2 hover:border-[#00da00]" onClick={handleSave}>submit edit</button>
+          <button className="bg-black border border-[#00da00] text-[#00da00] h-[40px] w-full self-center rounded cursor-pointer text-[1.1rem] hover:border-2 hover:border-[#00da00]" onClick={() => removeTodo(editedTodo.id)}>delete todo</button>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="todo-box">
-      <h2>Todo: {todo.title}</h2>
-      <p>Priority: {todo.priority}</p>
-      <p>Status: {todo.done ? "Done" : "Not done"}</p>
-      <div className="button-box">
-        <button onClick={() => editTodo(todo.id)}>edit todo</button>
-        <button onClick={() => removeTodo(todo.id)}>delete todo</button>
+    <div className="h-[250px] w-[300px] flex flex-col items-center content-between gap-[30px]">
+      <h2 className="text-[1.3rem]">Todo: {todo.title}</h2>
+      <p className="text-[1.3rem]">Priority: {todo.priority}</p>
+      <p className="text-[1.3rem]">Status: {todo.done ? "Done" : "Not done"}</p>
+      <div className="w-full h-[40px] flex flex-rowx">
+        <button className="bg-black border border-[#00da00] text-[#00da00] h-[40px] w-full self-center rounded cursor-pointer text-[1.1rem] hover:border-2 hover:border-[#00da00]" onClick={() => editTodo(todo.id)}>edit todo</button>
+        <button className="bg-black border border-[#00da00] text-[#00da00] h-[40px] w-full self-center rounded cursor-pointer text-[1.1rem] hover:border-2 hover:border-[#00da00]" onClick={() => removeTodo(todo.id)}>delete todo</button>
       </div>
     </div>
   );
