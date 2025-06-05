@@ -11,7 +11,7 @@ type TodosProps = {
 // loops through todos array using map. and for each todo it renders Todospresentation comonent and passes down todo object + functions
 export const Todos = ({todos, editTodo, updateTodo, removeTodo}:TodosProps) => {
     return(
-        <div className="todos">
+        <div className="flex flex-row justify-center w-full h-full flex-wrap gap-[100px] mt-5 ">
             {todos.map((t)=> (
                 <TodosPresentation key={t.id} todo={t} editTodo={editTodo} updateTodo={updateTodo} removeTodo={removeTodo} />
             ))}

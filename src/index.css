@@ -1,6 +1,2 @@
-body{
-  background-color: rgb(27, 27, 27);
-  color: rgb(0, 218, 0);
-  font-family: "Play", sans-serif;
-  font-weight: 700;
-}
+@import "tailwindcss";
+
