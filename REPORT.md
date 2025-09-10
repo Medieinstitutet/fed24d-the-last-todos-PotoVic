@@ -1,9 +1,10 @@
 # 📌 Rättningsrapport – fed24d-the-last-todos-PotoVic
 
 ## 🎯 Uppgiftens Krav:
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Tfc19Mhg)
 # Inlämningsuppgift Todo
 
-I denna inlämningsuppgift kommer ni att skapa er egen todo-lista i en react-applikation.
+I denna inlämningsuppgift kommer ni att skapa er egen todo-lista.
 Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp på skärmen i form av en lista. När uppgiften är slutförd skall användaren kunna markera uppgiften som slutförd och uppgiften skall då tas bort från listan.
 
 ## Betyg G
@@ -11,17 +12,20 @@ Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp p
 - Skapa en hårdkodad lista med punkter att göra (hitta på egna punkter, dessa skall inte bara vara en text)
 - Presentera listan på skärmen, helst med lite kontroll. Detta betyder i en html-struktur t.ex. i en ul/li-lista
 - Implementera klickhändelse för att hantera borttagandet av en todo.
-- Todo markeras som klar/tas bort från skärmen och markeras som klar i javascript-listan.
+- Todo markeras som klar på skärmen och markeras som klar i javascript-listan.
+- Ni behöver använda localStorage så att listan inte börjar om från början varje gång sidan används.
+- Ni behöver använda er av en komponent.
+- Ni behöver använda er av state med en lista med objekt.
 
 ## Betyg VG
 
 - Alla punkter under G
 - Kunna visa även klara händelser och klicka tillbaka den så att de blir oklara igen.
 - Skapa ett formulär som tillåter att en användare skapar nya todos efterhand.
-- Använda lifting state up för att dela upp dina komponenter bättre.
 - Kunna sortera ordningen på dina todos.
-- Implementera ett valfritt grafiskt ramverk till din todolista, t.ex. material ui eller tailwind.
-- Egen css får gärna skrivas och då skall ni ha en bra struktur och använda flex eller grid på ett bra sätt.
+- Implementera ett valfritt grafiskt ramverk, t.ex. tailwind eller material ui.
+- Ni behöver ha minst tre komponenter.
+- Ni måste använda Lifting State Up.
 
 ## Allmänt
 
@@ -50,7 +54,7 @@ för att köra projektet.
 
 
 ## 🏆 **Betyg: VG**
-📌 **Motivering:** Den inlämnade koden uppfyller alla krav för både G och VG. Studenten har implementerat en todo-lista i en react-applikation som uppfyller funktionalitetskraven som att markera uppgifter som klara, hantera klickhändelser för att ta bort uppgifter, samt använda ett formulär för att lägga till nya uppgifter. Dessutom används lifting state up och lokal lagring med lokalstatehantering. Det grafiska ramverket Tailwind CSS har också använts effektivt för att styra layout och stil.
+📌 **Motivering:** Koden uppfyller både G och VG kraven. Den har en hårdkodad lista som används och sparas i localStorage, topplacering av View-komponenten genom lifting state up, samt funktioner för att lägga till, redigera och ta bort todos. Den implementerar även Tailwind CSS som ett grafiskt ramverk.
 
 💡 **Förbättringsförslag:**  
-Koden är överlag välstrukturerad och följer god praxis. Följande mindre förbättringar kan övervägas: 1) Förbättra hanteringen av unika `<option>` elementenas förvalda värden i `select`-elementen så att de är mer tydligt definierade. 2) Konsolidera eller abstrahera CSS-klasser som upprepas för att öka återanvändbarheten. 3) Implementera fler testfall för att säkerställa att applikationen uppför sig korrekt under olika omständigheter. 4) Lägg till mer omfattande kommentarer där det är möjligt för att göra koden ännu mer läsbar och begriplig för andra utvecklare som kommer att arbeta med koden i framtiden.
+Inga större förbättringar behövs, men det kan vara bra att refaktorera koden för att förbättra läsbarheten genom att bryta ner några av de mer omfattande komponenterna i mindre återanvändbara komponenter. Koden kan ha nytta av bättre dokumentation i form av kommentarer, för att förklara särskilt överväganden om varför vissa val gjordes eller hur specifika delar av funktionaliteten fungerar. Optimering av CSS-klasser med Tailwind för att minimera redundanser och förbättra läsbarheten kan också övervägas.
